@@ -163,3 +163,5 @@ EOS
     assert_equal true, a == b
     assert_equal false, a.object_id == b.object_id
   end
+
+end
