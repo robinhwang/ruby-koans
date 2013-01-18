@@ -57,3 +57,4 @@ class AboutHashes < EdgeCase::Koan
     expected = { "jim" => 54, "amy" => 20, "dan" => 23, "jenny" => 26}
     assert_equal true, expected == new_hash
   end
+end
