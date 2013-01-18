@@ -83,6 +83,7 @@ class AboutRegularExpression < EdgeCase::Koan
     assert_equal "2", "num 42\n2 lines"[/^\d+/]
 
     #a little confused here, check the regexp again
+    ## solved , cause ^ stands for the start of the line
   end
 
   def test_dollar_sign_anchors_to_the_end_of_lines
@@ -122,6 +123,9 @@ class AboutRegularExpression < EdgeCase::Koan
   def test_sub_is_like_find_and_replace
     assert_equal "one t-three", "one two-three".sub(/(t\w*)/){
       $1[0, 1]
+
+    #first $1 will select two ,which detected by the regexp
+    #and [0,1] choose the word to subsitute the origin $1
     }
   end
 
@@ -130,4 +134,5 @@ class AboutRegularExpression < EdgeCase::Koan
       $1[0, 1]
     }
   end
+  #just sub _all
 end
