@@ -2,10 +2,10 @@
 
 def triangle(a, b, c)
   sides = [a, b, c].sort
-  raise TriangleError if sides.any { |side|
+  raise TriangleError if sides.any? { |side|
     side <= 0
   }
-  raise TriangleError if (sides[0] + sides[1] < sides[2])
+  raise TriangleError unless (sides[0] + sides[1]) > sides[2]
   sides.uniq!
 
   if sides.count == 1
@@ -13,7 +13,7 @@ def triangle(a, b, c)
   elsif sides.count == 2
     :isosceles
   else
-    :scalenen
+    :scalene
   end
 end
 
@@ -32,6 +32,6 @@ class AboutTriangleProject < EdgeCase::Koan
   end
 
   def test_scalene_triangles_have_no_equal_sides
-    assert_equal :scalenen, triangle(3, 4, 5)
+    assert_equal :scalene, triangle(3, 4, 5)
   end
 end
