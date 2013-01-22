@@ -85,4 +85,3 @@ class AboutIteration
     end
    end
  end
- 
