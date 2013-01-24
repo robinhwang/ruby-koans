@@ -31,7 +31,7 @@ class Proxy
     @messages.include? method_name
   end
 # === means included in it
-  def number_of_times_called
+  def number_of_times_called(method_name)
     @messages.find_all{ |m| m === method_name }.count
   end
 end
