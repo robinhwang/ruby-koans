@@ -1,3 +1,19 @@
+class  Television
+  attr_accessor :channel
+
+  def power
+    if @power == :on
+      @power = :off
+    else
+      @power = :on
+    end
+  end
+
+  def on?
+    @power == :on
+  end
+end
+#-------------------
 class Proxy
   attr_reader :messages
 
@@ -14,7 +30,7 @@ class Proxy
   def called?(method_name)
     @messages.include? method_name
   end
-
+# === means included in it
   def number_of_times_called
     @messages.find_all{ |m| m === method_name }.count
   end
